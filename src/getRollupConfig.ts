@@ -1,12 +1,12 @@
 import { basename, extname, join } from 'path';
-import { terser } from "@rollup/plugin-terser";
+import { terser } from "rollup-plugin-terser";
 import babel from "@rollup/plugin-babel";
 import replace from "@rollup/plugin-replace";
 import json from "@rollup/plugin-json";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import typescript2 from "@rollup/plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
-import postcss from "@rollup/plugin-postcss-umi";
+import postcss from "rollup-plugin-postcss-umi";
 import inject from "@rollup/plugin-inject";
 import { ModuleFormat, RollupOptions } from 'rollup';
 import { camelCase } from 'lodash';
