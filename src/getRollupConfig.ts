@@ -1,20 +1,20 @@
 import { basename, extname, join } from 'path';
-import { terser } from 'rollup-plugin-terser';
-import babel from 'rollup-plugin-babel';
-import replace from 'rollup-plugin-replace';
-import json from 'rollup-plugin-json';
-import nodeResolve from 'rollup-plugin-node-resolve';
-import typescript2 from 'rollup-plugin-typescript2';
-import commonjs from 'rollup-plugin-commonjs';
-import postcss from 'rollup-plugin-postcss-umi';
-import inject from 'rollup-plugin-inject';
+import { terser } from "@rollup/plugin-terser";
+import babel from "@rollup/plugin-babel";
+import replace from "@rollup/plugin-replace";
+import json from "@rollup/plugin-json";
+import nodeResolve from "@rollup/plugin-node-resolve";
+import typescript2 from "@rollup/plugin-typescript";
+import commonjs from "@rollup/plugin-commonjs";
+import postcss from "@rollup/plugin-postcss-umi";
+import inject from "@rollup/plugin-inject";
 import { ModuleFormat, RollupOptions } from 'rollup';
 import { camelCase } from 'lodash';
 import tempDir from 'temp-dir';
 import autoprefixer from 'autoprefixer';
 import NpmImport from 'less-plugin-npm-import';
 import svgr from '@svgr/rollup';
-import url from 'rollup-plugin-url';
+import url from "@rollup/plugin-url";
 import getBabelConfig from './getBabelConfig';
 import { IBundleOptions } from './types';
 
@@ -111,7 +111,7 @@ export default function(opts: IGetRollupConfigOpts): RollupOptions[] {
   // umd 只要 external peerDependencies
   const externalPeerDeps = [
     ...Object.keys(pkg.peerDependencies || {}),
-    ...extraExternals,    
+    ...extraExternals,
   ];
 
   function getPkgNameByid(id) {
