@@ -5,7 +5,7 @@ import replace from 'rollup-plugin-replace';
 import json from 'rollup-plugin-json';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import typescript2 from 'rollup-plugin-typescript2';
-import commonjs from 'rollup-plugin-commonjs';
+import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss-umi';
 import inject from 'rollup-plugin-inject';
 import { ModuleFormat, RollupOptions } from 'rollup';
@@ -111,7 +111,7 @@ export default function(opts: IGetRollupConfigOpts): RollupOptions[] {
   // umd 只要 external peerDependencies
   const externalPeerDeps = [
     ...Object.keys(pkg.peerDependencies || {}),
-    ...extraExternals,    
+    ...extraExternals,
   ];
 
   function getPkgNameByid(id) {
